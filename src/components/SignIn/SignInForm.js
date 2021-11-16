@@ -25,12 +25,12 @@ const SignInForm = () => {
     firebase
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
-        reset();
         console.log("Success");
-      })
-      .catch((error) => {
         reset();
+      })
+      .catch(() => {
         console.log("Error");
+        reset();
       });
   };
 
